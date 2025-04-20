@@ -7,7 +7,8 @@ interface InputProps extends React.ComponentProps<"input"> {
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
   ({ className, type, label, id, ...props }, ref) => {
-    const inputId = id || React.useId(); // ensures unique ID for accessibility
+    const generatedId = React.useId();
+    const inputId = id ?? generatedId;
 
     return (
       <div className="w-full flex flex-col gap-2">
@@ -58,5 +59,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
     );
   }
 );
+
+Input.displayName = "Input";
 
 export default Input;
