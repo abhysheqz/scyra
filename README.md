@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🚀 Scyra – Find, Analyze & Repost Viral Instagram Content with AI
 
 **Scyra** is your AI-powered shortcut to discovering top-performing content on Instagram. Whether you're a creator, brand, or marketer, Scyra helps you find viral posts, analyze trends, and save time creating high-impact social media content.
@@ -51,3 +52,6 @@ Scyra is a modern SaaS platform that combines **Instagram content discovery**, *
 ## ❤️ Crafted with love by [Abhishek Rathore](https://abhysheqz.vercel.app)
 
 > Scyra: Let AI find your next viral post.
+=======
+
+>>>>>>> d9dc552f4a2384537eaaaee48b0c72e545c17aae
