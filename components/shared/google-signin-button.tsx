@@ -11,7 +11,7 @@ const GoogleSignInButton = () => {
       className="w-full flex items-center justify-center gap-2 bg-white border-b-neutral-400 text-neutral-800"
       onClick={async () => {
         "use server";
-        await signIn("google");
+        await signIn("google", { redirectTo: "/dashboard" });
       }}
     >
       <Image

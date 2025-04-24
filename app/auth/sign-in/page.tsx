@@ -7,12 +7,12 @@ import Link from "next/link";
 import React from "react";
 
 const videos = [
-  "/video/basketball-captain.mp4",
-  "/video/ellie-williams.mp4",
-  "/video/ghost.mp4",
-  "/video/gojo-satoru.mp4",
-  "/video/sherlock-holmes.mp4",
-  "/video/space-adventurer.mp4",
+  "/videos/basketball-captain.mp4",
+  "/videos/ellie-williams.mp4",
+  "/videos/ghost.mp4",
+  "/videos/gojo-satoru.mp4",
+  "/videos/sherlock-holmes.mp4",
+  "/videos/space-adventurer.mp4",
 ];
 
 const LoginPage = () => {

@@ -16,6 +16,8 @@ const buttonVariants = cva(
           "bg-gradient-to-tr from-gray-700 to-gray-800 text-white rounded-2xl hover:scale-105",
         ghost:
           "bg-transparent text-purple-500 hover:bg-purple-500/10 rounded-2xl hover:scale-105",
+        danger:
+          "bg-red-500 border-b hover:bg-red-500/80 rounded-2xl border-b-red-300 border-b-2",
       },
       size: {
         default: "py-2 px-5",
