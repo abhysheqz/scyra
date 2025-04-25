@@ -7,7 +7,7 @@ const AppLayout: React.FC<{ children: React.ReactNode }> = async ({
 }) => {
   const session = await auth();
 
-  if (!session) redirect("/auth/sign-in");
+  if (!session) redirect("/sign-in");
 
   return children;
 };

@@ -34,7 +34,7 @@ export default async function DashboardPage() {
           variant={"danger"}
           onClick={async () => {
             "use server";
-            await signOut();
+            await signOut({ redirectTo: "/sign-in" });
           }}
         >
           Sign Out
