@@ -74,7 +74,7 @@ const Card: React.FC<React.HTMLAttributes<HTMLDivElement>> = ({
   return (
     <div
       className={cn(
-        "bg-neutral-800 rounded-4xl p-5 flex flex-col justify-center items-center",
+        "bg-gradient-to-br from-neutral-800 to-neutral-900 rounded-4xl p-5 flex flex-col justify-center items-center",
         className
       )}
       {...props}

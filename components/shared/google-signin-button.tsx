@@ -1,18 +1,15 @@
 import React from "react";
 import Button from "@/components/shared/button";
 import Image from "next/image";
-import { signIn } from "@/auth";
+import { googleSignIn } from "@/lib/actions";
 
-const GoogleSignInButton = () => {
+const GoogleSignInButton: React.FC = () => {
   return (
     <Button
       type="button"
       size={"lg"}
       className="w-full flex items-center justify-center gap-2 bg-white border-b-neutral-400 text-neutral-800"
-      onClick={async () => {
-        "use server";
-        await signIn("google", { redirectTo: "/dashboard" });
-      }}
+      onClick={googleSignIn}
     >
       <Image
         src="/icons/google.svg"

@@ -1,10 +1,16 @@
+"use client";
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+
 import Input from "@/components/input";
 import Button from "@/components/shared/button";
 import GoogleSignInButton from "@/components/shared/google-signin-button";
 import PageWrapper from "@/components/shared/page-wraper";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+
+import { SignUpFormData, signUpSchema } from "@/lib/validation";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const videos = [
   "/videos/basketball-captain.mp4",
@@ -15,13 +21,28 @@ const videos = [
   "/videos/space-adventurer.mp4",
 ];
 
-const SignupPage = () => {
+const SignupPage: React.FC = () => {
   const randomVideo = videos[Math.floor(Math.random() * videos.length)];
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<SignUpFormData>({
+    resolver: zodResolver(signUpSchema),
+  });
+
+  const onSubmit = async (data: SignUpFormData) => {
+    console.log(data);
+  };
 
   return (
     <PageWrapper className="flex flex-col lg:flex-row">
       <div className="w-full lg:w-1/2 flex items-center justify-center h-screen px-4 sm:px-8">
-        <form className="w-full max-w-md space-y-6">
+        <form
+          className="w-full max-w-md space-y-6"
+          onSubmit={handleSubmit(onSubmit)}
+        >
           <div className="w-full flex flex-col items-center gap-5">
             <Image
               src={"/logos/logo.png"}
@@ -37,9 +58,24 @@ const SignupPage = () => {
           </div>
 
           <div className="space-y-4">
-            <Input label="Name" name="name" type="text" required />
-            <Input label="Email" name="email" type="email" required />
-            <Input label="Password" name="password" type="password" required />
+            <Input
+              label="Name"
+              type="text"
+              {...register("name")}
+              error={errors.name?.message}
+            />
+            <Input
+              label="Email"
+              type="email"
+              {...register("email")}
+              error={errors.email?.message}
+            />
+            <Input
+              label="Password"
+              type="password"
+              {...register("password")}
+              error={errors.password?.message}
+            />
           </div>
 
           <Button type="submit" className="w-full tracking-wider" size={"lg"}>
@@ -60,7 +96,7 @@ const SignupPage = () => {
             Already have an account?{" "}
             <Link
               href="/sign-in"
-              className="text-purple-400 hover:underline transition duration-200"
+              className="text-purple-500 hover:underline transition duration-200"
             >
               Sign in
             </Link>

@@ -1,8 +1,10 @@
 import NextTopLoader from "nextjs-toploader";
 import { Space_Grotesk } from "next/font/google";
 import type { Metadata } from "next";
+import { Toaster } from "sonner";
 
 import "./globals.css";
+import "ldrs/react/Squircle.css";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space",
@@ -23,6 +25,12 @@ export default function RootLayout({
       <body className={`${spaceGrotesk.variable} antialiased`}>
         <NextTopLoader color="#AD46FF" showSpinner={false} />
         {children}
+        <Toaster
+          position="bottom-right"
+          richColors
+          visibleToasts={5}
+          closeButton
+        />
       </body>
     </html>
   );

@@ -3,10 +3,11 @@ import { cn } from "@/lib/utils";
 
 interface InputProps extends React.ComponentProps<"input"> {
   label?: string;
+  error?: string;
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, label, id, ...props }, ref) => {
+  ({ className, type, label, id, error, ...props }, ref) => {
     const generatedId = React.useId();
     const inputId = id ?? generatedId;
 
@@ -55,6 +56,9 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           ref={ref}
           {...props}
         />
+        {error && (
+          <span className="text-red-400 text-sm mt-1 ml-3">{error}</span>
+        )}
       </div>
     );
   }
